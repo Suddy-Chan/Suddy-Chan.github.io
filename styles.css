@@ -116,6 +116,10 @@ h1 {
     border-radius: 0;
 }
 
+.job-title {
+    font-size: 1.2em;  /* Makes the text 20% larger than the parent element */
+}
+
 /* Experience Section Styles */
 .exp {
     flex: 1 1 auto;
