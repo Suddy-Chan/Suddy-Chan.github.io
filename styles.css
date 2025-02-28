@@ -19,7 +19,6 @@ h1 {
     font-size: 18px;
     color: #666;
     margin-bottom: 20px;
-    font-style: italic;
 }
 
 /* Navigation Styles */
@@ -446,4 +445,74 @@ button:hover {
 
 .tech-tag i {
     font-size: 1em;
+}
+
+/* Hero Section Styles - Updated with smaller height */
+.hero {
+    position: relative;
+    height: 40vh;  /* Reduced from 70vh */
+    min-height: 300px;  /* Reduced from 500px */
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
+    opacity: 0.2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    color: white;
+}
+
+.hero .tagline {
+    font-size: 1.5rem;
+    max-width: 100%;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Removed hero-cta, hero-button, and related styles */
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .hero {
+        height: 35vh;  /* Reduced from 60vh */
+        min-height: 250px;  /* Reduced from 400px */
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero .tagline {
+        font-size: 1rem;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .hero .tagline {
+        font-size: 0.8rem;
+    }
 }
