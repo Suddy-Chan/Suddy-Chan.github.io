@@ -17,33 +17,33 @@
         <ul>
             <li><a href="#info">About</a></li>
             <li><a href="#exp">Experience</a></li>
-            <li><a href="#interest">Interests</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#interest">Interests</a></li>
             <li><a href="#projects">Projects</a></li>
         </ul>
     </div>
 
     <div class="container">
-    <!-- My Avatar -->
-        <div class="avatar">
-            <img src="https://i.pinimg.com/736x/0f/0f/32/0f0f327fde70bb2ca203c9ac3a39b693.jpg">
-        </div>
-    
-        <!-- About Section (formerly My Info) -->
+    <!-- About Section with Avatar -->
         <div class="info" id="info">
-            <h2>About</h2>
-            <ul class="info-list">
-                <li><i class="fas fa-user"></i> Sunny Chan</li>
-                <li><i class="fas fa-map-marker-alt"></i> Hong Kong</li>
-                <li><i class="fas fa-graduation-cap"></i> HKUST Graduate (Master in Data Science)</li>
-                <li><i class="fas fa-bullseye"></i> Career Focus: Cryptocurrency & IT</li>
-            </ul>
+            <h2><i class="fas fa-info-circle"></i> About</h2>
+            <div class="info-content">
+                <div class="avatar">
+                    <img src="https://i.pinimg.com/736x/0f/0f/32/0f0f327fde70bb2ca203c9ac3a39b693.jpg" alt="Sunny Chan">
+                </div>
+                <ul class="info-list">
+                    <li><i class="fas fa-user"></i> Sunny Chan</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Hong Kong</li>
+                    <li><i class="fas fa-graduation-cap"></i> HKUST Graduate (Master in Data Science)</li>
+                    <li><i class="fas fa-bullseye"></i> Career Focus: Cryptocurrency & IT</li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <!-- Experience Section -->
     <div class="exp" id="exp">
-        <h2>Experience</h2>
+        <h2><i class="fas fa-briefcase"></i> Experience</h2>
         <div class="timeline">
             <div class="exp-last timeline-item">
                 <div class="timeline-date">Sep 2023 - May 2024</div>
@@ -69,44 +69,74 @@
         </div>
     </div>
 
-    <!-- Interests Section -->
-    <div class="interest" id="interest">
-        <h2>Interests</h2>
-        <ul>
-            <li><i class="fas fa-brain"></i> Machine Learning</li>
-            <li><i class="fas fa-code"></i> Web Development</li>
-            <li><i class="fas fa-link"></i> Blockchain Technology</li>
-            <li><i class="fas fa-coins"></i> Crypto Trading</li>
-        </ul>
-    </div>
-
     <!-- Skills Section -->
     <div class="skills" id="skills">
-        <h2>Skills</h2>
+        <h2><i class="fas fa-code"></i> Skills</h2>
         <div class="skill-category">
-            <h3><i class="fas fa-code"></i> Programming Languages</h3>
-            <div class="skill-list">
-                <div class="skill">Python</div>
-                <div class="skill">HTML</div>
-                <div class="skill">CSS</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">SQL</div>
-                <div class="skill">Java</div>
+            <h3>Programming Languages</h3>
+            <div class="skill-grid">
+                <div class="skill-item"><i class="fab fa-python"></i> Python</div>
+                <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+                <div class="skill-item"><i class="fab fa-html5"></i> HTML</div>
+                <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS</div>
+                <div class="skill-item"><i class="fas fa-database"></i> SQL</div>
             </div>
         </div>
+
         <div class="skill-category">
-            <h3><i class="fas fa-users"></i> Soft Skills</h3>
-            <div class="skill-list">
-                <div class="skill">Communication</div>
-                <div class="skill">Presentation</div>
-                <div class="skill">Project Management</div>
+            <h3>Technologies & Tools</h3>
+            <div class="skill-grid">
+                <div class="skill-item"><i class="fab fa-git-alt"></i> Git</div>
+                <div class="skill-item"><i class="fab fa-docker"></i> Docker</div>
+                <div class="skill-item"><i class="fab fa-aws"></i> AWS</div>
+                <div class="skill-item"><i class="fab fa-react"></i> React</div>
+                <div class="skill-item"><i class="fab fa-node-js"></i> Node.js</div>
+                <div class="skill-item"><i class="fas fa-database"></i> MongoDB</div>
+                <div class="skill-item"><i class="fas fa-brain"></i> TensorFlow</div>
+                <div class="skill-item"><i class="fas fa-fire"></i> PyTorch</div>
+            </div>
+        </div>
+
+        <div class="skill-category">
+            <h3>Professional Skills</h3>
+            <div class="skill-grid">
+                <div class="skill-item"><i class="fas fa-tasks"></i> Project Management</div>
+                <div class="skill-item"><i class="fas fa-users-cog"></i> Team Leadership</div>
+                <div class="skill-item"><i class="fas fa-puzzle-piece"></i> Problem Solving</div>
+                <div class="skill-item"><i class="fas fa-comments"></i> Communication</div>
+                <div class="skill-item"><i class="fas fa-sync"></i> Agile Methodology</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interests Section -->
+    <div class="interests" id="interest">
+        <h2><i class="fas fa-heart"></i> Interests</h2>
+        <div class="interest-categories">
+            <div class="interest-category">
+                <h3>Technical Interests</h3>
+                <div class="interest-grid">
+                    <div class="interest-item"><i class="fas fa-brain"></i> Machine Learning</div>
+                    <div class="interest-item"><i class="fas fa-link"></i> Blockchain</div>
+                    <div class="interest-item"><i class="fas fa-robot"></i> AI Development</div>
+                    <div class="interest-item"><i class="fas fa-project-diagram"></i> DeFi</div>
+                </div>
+            </div>
+            
+            <div class="interest-category">
+                <h3>Personal Interests</h3>
+                <div class="interest-grid">
+                    <div class="interest-item"><i class="fas fa-coins"></i> Crypto Trading</div>
+                    <div class="interest-item"><i class="fas fa-table-tennis"></i> Table Tennis</div>
+                    <div class="interest-item"><i class="fas fa-music"></i> Music</div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Projects Section -->
     <div class="projects" id="projects">
-        <h2>Projects</h2>
+        <h2><i class="fas fa-project-diagram"></i> Projects</h2>
         <div class="project-grid">
             <div class="project-card">
                 <h3><i class="fas fa-robot"></i> AI Prompt Generator</h3>
