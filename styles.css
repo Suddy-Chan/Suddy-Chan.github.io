@@ -14,11 +14,46 @@ h1 {
     text-align: center;
 }
 
-.tagline {
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    height: 30vh;
+    min-height: 200px;
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 20px;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
+    opacity: 0.2;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    color: white;
+}
+
+.hero .tagline {
+    font-size: 1.2rem;  
+    max-width: 600px;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 20px;    
 }
 
 /* Navigation Styles */
@@ -472,48 +507,6 @@ button:hover {
 
 .tech-tag i {
     font-size: 1em;
-}
-
-/* Hero Section Styles */
-.hero {
-    position: relative;
-    height: 30vh;
-    min-height: 200px;
-    background: linear-gradient(135deg, #4361ee, #3a0ca3);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-    margin-bottom: 30px;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
-    opacity: 0.2;
-}
-
-.hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 8px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    color: white;
-}
-
-.hero .tagline {
-    font-size: 1.2rem;  
-    max-width: 600px;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 20px;    
 }
 
 /* Media query for smaller screens */
