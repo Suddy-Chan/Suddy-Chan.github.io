@@ -4,9 +4,36 @@
 /* Global Styles */
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+}
+
+/* Add an overlay to ensure text remains readable */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* White overlay with 90% opacity */
+    z-index: -1;
+}
+
+/* Ensure all sections have proper background for readability */
+.hero, .info, .exp, .skills, .interests, .projects, .nav, .footer {
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Hero section needs special treatment */
+.hero {
+    background: linear-gradient(135deg, rgba(67, 97, 238, 0.9), rgba(58, 12, 163, 0.9));
 }
 
 /* Header Styles */
@@ -19,7 +46,6 @@ h1 {
     position: relative;
     height: 30vh;
     min-height: 200px;
-    background: linear-gradient(135deg, #4361ee, #3a0ca3);
     color: white;
     display: flex;
     flex-direction: column;
@@ -58,7 +84,6 @@ h1 {
 
 /* Navigation Styles */
 .nav {
-    background-color: #f2f2f2;
     overflow: hidden;
     padding: 15px 0;
     margin-bottom: 20px;
@@ -106,9 +131,6 @@ h1 {
     max-width: 1000px;
     margin: 0 auto 40px auto;
     padding: 30px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .info h2 {
@@ -347,10 +369,6 @@ button:hover {
 
 /* Skills Section Styles */
 .skills {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 20px;
     margin-bottom: 20px;
     margin-left: 30px;
     margin-right: 30px;
@@ -543,7 +561,6 @@ button:hover {
 .skills, .interests {
     background-color: white;
     border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     padding: 30px;
 }
 
