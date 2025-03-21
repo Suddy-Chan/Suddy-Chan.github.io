@@ -1018,3 +1018,31 @@ h2 i {
         grid-template-columns: 1fr;
     }
 }
+
+/* Company Logo - Updated size */
+.company-logo {
+    width: 200px;
+    height: 80px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.company-logo img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;  /* This ensures the image maintains its aspect ratio */
+    padding: 8px;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .company-logo {
+        width: 60px;  /* Even smaller on mobile */
+        height: 60px;
+    }
+}
