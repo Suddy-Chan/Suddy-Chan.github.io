@@ -54,3 +54,24 @@ function addBackToTopButton() {
 
 // Call the addBackToTopButton function
 addBackToTopButton();
+
+// Add this function to handle nav bar fixing
+function handleNavScroll() {
+    const nav = document.querySelector('.nav');
+    const hero = document.querySelector('.hero');
+    const heroBottom = hero.offsetTop + hero.offsetHeight;
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset >= heroBottom - nav.offsetHeight) {
+            nav.classList.add('fixed');
+        } else {
+            nav.classList.remove('fixed');
+        }
+    });
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    handleNavScroll();
+    // ... existing code ...
+});
