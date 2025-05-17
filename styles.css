@@ -87,7 +87,7 @@ body::before {
     top: 30vh;          /* Match hero height */
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #808080;  /* Changed to gray */
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 1000;
     padding: 15px 0;
@@ -111,20 +111,20 @@ body::before {
 
 .nav li a {
     display: inline-block;
-    color: #333;
+    color: white;  /* Changed to white for better contrast */
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
     font-weight: 500;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
     border-radius: 25px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
 }
 
 .nav li a:hover {
-    color: white;
-    background-color: #007bff;
+    color: #808080;  /* Changed to match nav background */
+    background-color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
