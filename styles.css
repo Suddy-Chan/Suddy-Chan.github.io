@@ -299,6 +299,25 @@ body::before {
     transform: scale(1.2);
 }
 
+.info-list li.has-sublist {
+    align-items: flex-start;
+}
+
+.info-list li ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.info-list li ul li {
+    margin-bottom: 8px;
+    padding: 8px 16px;
+}
+
+.info-list li ul li:last-child {
+    margin-bottom: 0;
+}
+
 .job-title {
     font-size: 1.2em;
 }
