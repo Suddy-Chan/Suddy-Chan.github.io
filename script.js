@@ -1,77 +1,79 @@
-// Function to enable smooth scrolling for anchor links
+// Smooth scrolling for in-page anchor links
 function smoothScroll() {
-    // Select all anchor links with href starting with #
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      // Add click event listener to each anchor
-      anchor.addEventListener('click', function (e) {
-        // Prevent default link behavior
-        e.preventDefault();
-        // Scroll to the element with the href value smoothly
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
     });
-  }
-  
-  // Call the smoothScroll function
-  smoothScroll();
+  });
+}
 
-// Function to add a "Back to Top" button
+// "Back to Top" button (styled via .back-to-top in styles.css)
 function addBackToTopButton() {
-  // Create a new button element
   const button = document.createElement('button');
-  
-  // Set the button text
   button.textContent = 'Back to Top';
-  
-  // Style the button
-  button.style.position = 'fixed';
-  button.style.bottom = '20px';
-  button.style.right = '20px';
-  button.style.display = 'none';
-  
-  // Add the button to the document body
+  button.className = 'back-to-top';
   document.body.appendChild(button);
 
-  // Add scroll event listener
   window.addEventListener('scroll', () => {
-    // Show button when user scrolls down 300px from the top
-    if (window.pageYOffset > 300) {
-      button.style.display = 'block';
-    } else {
-      // Hide button when user is near the top
-      button.style.display = 'none';
-    }
+    button.style.display = window.pageYOffset > 300 ? 'block' : 'none';
   });
 
-  // Add click event listener to the button
   button.addEventListener('click', () => {
-    // Scroll to the top of the page smoothly
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 
-// Call the addBackToTopButton function
-addBackToTopButton();
+// Highlight the nav link of the section currently in view
+function highlightActiveNav() {
+  const links = document.querySelectorAll('.nav li a');
+  const sections = Array.from(links)
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
 
-// Add this function to handle nav bar fixing
-function handleNavScroll() {
-    const nav = document.querySelector('.nav');
-    const hero = document.querySelector('.hero');
-    const heroBottom = hero.offsetTop + hero.offsetHeight;
-
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset >= heroBottom - nav.offsetHeight) {
-            nav.classList.add('fixed');
-        } else {
-            nav.classList.remove('fixed');
-        }
+  function update() {
+    const offset = window.pageYOffset + 140;
+    let currentId = null;
+    sections.forEach(section => {
+      if (section.offsetTop <= offset) currentId = section.id;
     });
+    links.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
+    });
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
 }
 
-// Call the function when the page loads
+// Fade sections in as they scroll into view
+function revealOnScroll() {
+  const items = document.querySelectorAll(
+    '.info, .exp, .skills, .interests, .projects, .certifications'
+  );
+
+  if (!('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  items.forEach(item => {
+    item.classList.add('reveal');
+    observer.observe(item);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    handleNavScroll();
-    // ... existing code ...
+  smoothScroll();
+  addBackToTopButton();
+  highlightActiveNav();
+  revealOnScroll();
 });
